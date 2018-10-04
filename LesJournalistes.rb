@@ -4,7 +4,7 @@ puts  myTab.size
 puts "Combien d'handle contiennent un numéro ?"
 puts myTab.grep(/1/).count + myTab.grep(/2/).count + myTab.grep(/3/).count + myTab.grep(/4/).count + myTab.grep(/5/).count + myTab.grep(/6/).count + myTab.grep(/7/).count + myTab.grep(/8/).count
 puts "Combien d'handle contiennent les 4 lettres du prénom" + "Aude" + "à la suite (sans faire attention à la casse) ?"
-puts myTab.grep(/A/).count &&  myTab.grep(/a/).count && myTab.grep(/U/).count && myTab.grep(/u/).count &&  myTab.grep(/D/).count &&  myTab.grep(/d/).count &&  myTab.grep(/E/).count && myTab.grep(/e/).count
+puts puts myTab.map(&:downcase).grep(/aude/).count
 puts "Combien de _ dans tous les pseudos confondus ?"
 puts myTab.grep(/_/).count
 puts "Trie la liste de handle par ordre alphabétique"
@@ -13,5 +13,7 @@ puts "Voulez vous affichez le tableau?"
 print ">"
 x = gets.chomp
 if x == "oui" || "Oui"
+else
+puts " "
 end
 puts myTab.sort{|x,y| x <=> y }
